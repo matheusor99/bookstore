@@ -6,9 +6,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.bandtec.bookstore.domain.Livro;
+import br.com.bandtec.bookstore.domain.Opiniao;
 
 @Service
 public class LivroService {
+	
+	private List<Opiniao> opinioes = new ArrayList<>();
 	
 	public List<Livro> buscarPorTema(String tema) {
 		List<Livro> resultados = new ArrayList<Livro>();
@@ -27,5 +30,9 @@ public class LivroService {
 		livros.add(new Livro("Kotlin ou Java", "TI"));
 		livros.add(new Livro("Palmeiras a espera de um mundial", "comedia"));
 		return livros;
+	}
+
+	public void adicionarOpiniao(Opiniao opiniao) {
+		opinioes.add(opiniao);
 	}
 }
